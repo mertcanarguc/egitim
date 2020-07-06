@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Dini Akademi">
+    <meta name="author" content="Mertcan Arguç">
+    <title>DİNİ AKADEMİ</title>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="apple-touch-icon" type="image/x-icon" href="../../../img/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="../../../img/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="../../../img/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="../../../img/apple-touch-icon-144x144-precomposed.png">
+
+    <!-- BASE CSS -->
+    <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../css/style.css" rel="stylesheet">
+	<link href="../../../css/vendors.css" rel="stylesheet">
+	<link href="../../../css/icon_fonts/css/all_icons.min.css" rel="stylesheet">
+
+	<!-- SPECIFIC CSS -->
+    <link href="../../../layerslider/css/layerslider.css" rel="stylesheet">
+
+    <!-- YOUR CUSTOM CSS -->
+    <link href="../../../css/custom.css" rel="stylesheet">
+    <!--
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="../../../../img/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="../../../../img/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="../../../../img/apple-touch-icon-144x144-precomposed.png">
+
+
+    <link href="../../../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../../css/style.css" rel="stylesheet">
+	<link href="../../../../css/vendors.css" rel="stylesheet">
+	<link href="../../../../css/icon_fonts/css/all_icons.min.css" rel="stylesheet">
+
+
+    <link href="../../../../css/custom.css" rel="stylesheet">
+	-->
+    <script src="//code.jivosite.com/widget.js" jv-id="DYGzz2B6WP" async></script>
+
+    <style type="text/css">
+    	header{
+    		background: rgba(55, 55, 55, 0.4);
+    	}
+    </style>
+
+
+</head>
+
+<body>
+
+	<header class="header fadeInDown">
+
+	</div>
+		<div id="logo">
+			<a href="/"><img src="../../../img/logoo-2.png" style="padding-top: 10px" id="logo" width="auto" height="70" data-retina="true" alt=""></a>
+
+		</div>
+
+		<ul id="top_menu">
+			<% if (user) { -%>
+			<li class="hidden_tablet btn_1 rounded" style="color:black; background-color: white;"><img src="../../../../i-d.png"></li>
+			<li class="hidden_tablet btn_1 rounded" style="color:black; background-color: white;"><img src="../../../../w-d.png"></li>
+			<li class="hidden_tablet"><a href="/users/logout" class="btn_1 rounded">Çıkış yap</a></li>
+
+			<% } else { -%>
+			<li class="hidden_tablet btn_1 rounded" style="color:black; background-color: white;"><img src="../../../../i-d.png"></li>
+			<li class="hidden_tablet btn_1 rounded" style="color:black; background-color: white;"><img src="../../../../w-d.png"></li>
+			<li class="hidden_tablet"><a href="/users/register" class="btn_1 rounded">Üye Ol</a></li>
+			<li class="hidden_tablet"><a href="/users/login" class="btn_1 rounded" style="background-color: lightblue">Giriş Yap</a></li>
+
+			<% } -%>
+			<li>
+				<div class="hamburger hamburger--spin" style="color: black">
+					<div class="hamburger-box">
+						<div class="hamburger-inner"></div>
+					</div>
+				</div>
+			</li>
+		</ul>
+		<!-- /top_menu -->
+	</header>
+	<!-- /header -->
+
+	<div id="main_menu">
+		<div class="container" style="max-width: 1368px">
+		<nav class="version_2">
+
+				<div class="row" style="padding-top: 20px">
+					<div class="col-md-3">
+						<h3>Ana Menü</h3>
+						<ul>
+							<li><a href="/">Anasayfa</a></li>
+							<li><a href="/egitimler">Kurslar</a></li>
+							<li><a href="/hakkimizda">Hakkımızda</a></li>
+							<li><a href="https://blog.diniakademi.com">Blog</a></li>
+							<li><a href="/iletisim">İletişim</a></li>
+							<li><a href="/basvuru">Ücretsiz Ders Başvurusu</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<h3>Kategoriler</h3>
+						<ul>
+							<% kategori.forEach( function(data) { %>
+								<li><a href="/kategori/<%= data.ad %>"><%= data.ad %></a></li>
+							<% }) %>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<h3>DİĞER</h3>
+						<ul>
+							<li><a href="//online.diniakademi.com">VEDUBOX PLATFORMU</a></li>
+							<li><a href="//akademikmedya.adobeconnect.com">DİNİ AKADEMİ DERS PLATFORMU</a></li>
+							<li><a href="/sss">SIK SORULAN SORULAR</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<h3>HESABIM</h3>
+						<ul>
+							<% if (user) { -%>
+								<li><a href="">Kurslarım</a></li>
+								<li><a href="">İşlemlerim</a></li>
+								<li><a href="">Ayarlar</a></li>
+							<% } else { -%>
+								<li><a href="/users/login">Giriş Yap</a></li>
+							<% } -%>
+						</ul>
+
+					</div>
+				</div>
+				<!-- /row -->
+			</nav>
+			<div class="follow_us">
+				<ul>
+					<li>Bizi Takip Edin</li>
+					<li><a href="https://www.facebook.com/DiniAkademi/"><i class="ti-facebook"></i></a></li>
+					<!--<li><a href="#0"><i class="ti-twitter-alt"></i></a></li>
+					<li><a href="#0"><i class="ti-google"></i></a></li>
+					<li><a href="#0"><i class="ti-pinterest"></i></a></li>-->
+					<li><a href="https://www.instagram.com/diniakademi"><i class="ti-instagram"></i></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- /main_menu -->
+
+	<%- body %>
+
+	<!-- /main -->
+
+	<footer>
+		<div class="container margin_120_95">
+			<div class="row">
+				<div class="col-md-3">
+					<h6 style="color:white">Kurumsal</h6>
+					<ul id="additional_links">
+						<li><a href="/sartlar">Şartlar ve koşullar</a><br>
+							<a href="/hakkimizda">Hakkımızda</a><br>
+							<a href="/iletisim">İletişim</a><br>
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-3">
+					<h6 style="color:white">Sayfalar</h6>
+
+					<ul id="additional_links">
+						<li><a href="/">Anasayfa</a><br><a href="/egitimler">Kurslar</a><br><a href="/hakkimizda">Hakkımızda</a><br><a href="https://blog.diniakademi.com">Blog</a><br><a href="/iletisim">İletişim</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3">
+					<h6 style="color:white">Platformlar</h6>
+					<ul id="additional_links">
+						<li><a href="//online.diniakademi.com">VEDUBOX PLATFORMU</a><br><a href="//akademikmedya.adobeconnect.com">DİNİ AKADEMİ DERS PLATFORMU</a><br></li>
+					</ul>
+				</div>
+				<div class="col-md-3">
+					<h6 style="color:white">Yardım</h6>
+					<ul id="additional_links">
+						<li><a href="/iletisim">İLETİŞİM</a><br><a href="/sss">SIK SORULAN SORULAR</a></li>
+					</ul>
+				</div>
+			</div>
+			<hr>
+			<div class="row">
+				<div class="col-md-4">
+					<img src="../../../../visa.png" width="120" height="45">
+				</div>
+				<div class="col-md-4">
+					<div class="follow_us">
+						<ul>
+							<li>Bizi Takip Edin</li>
+							<li><a href="//facebook.com/teklidermedya/"><i class="ti-facebook"></i></a></li>
+							<li><a href="#0"><i class="ti-twitter-alt"></i></a></li>
+							<li><a href="#0"><i class="ti-google"></i></a></li>
+							<li><a href="#0"><i class="ti-pinterest"></i></a></li>
+							<li><a href="//instagram.com/teklidermedya_/"><i class="ti-instagram"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div id="copy"><p class="text-right">© 2019 Dini Akademi </p><br>
+				</div>
+			</div>
+
+		</div>
+	</footer>
+
+	<!--/footer-->
+
+	<!-- Search Menu -->
+	<div class="search-overlay-menu">
+		<span class="search-overlay-close"><span class="closebt"><i class="ti-close"></i></span></span>
+		<form role="search" id="searchform" method="get">
+			<input value="" name="q" type="search" placeholder="Arama..." />
+			<button type="submit"><i class="icon_search"></i>
+			</button>
+		</form>
+	</div><!-- / Search Menu -->
+
+<div id="myModal" class="modal fade" role="dialog" style="padding-top: 100px">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Şartlar ve Koşullar</h4>
+      </div>
+      <div class="modal-body" style="height: 500px">
+        <iframe src="/sartlar"></iframe>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Çıkış</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+	<!-- COMMON SCRIPTS
+    <script src="../../../../js/jquery-2.2.4.min.js"></script>
+    <script src="../../../../js/common_scripts.js"></script>
+    <script src="../../../../js/main.js"></script>
+	<script src="../../../../assets/validate.js"></script>
+ -->
+ 	<script src="../../../../js/jquery-2.2.4.min.js"></script>
+    <script src="../../../../js/common_scripts.js"></script>
+    <script src="../../../../js/main.js"></script>
+	<script src="../../../../assets/validate.js"></script>
+
+	<!-- SPECIFIC SCRIPTS -->
+    <script src="../../../../layerslider/js/greensock.js"></script>
+    <script src="../../../../layerslider/js/layerslider.transitions.js"></script>
+    <script src="../../../../layerslider/js/layerslider.kreaturamedia.jquery.js"></script>
+    <script type="text/javascript">
+        'use strict';
+        $('#layerslider').layerSlider({
+            autoStart: true,
+            navButtons: false,
+            navStartStop: false,
+            showCircleTimer: false,
+            responsive: true,
+            responsiveUnder: 1280,
+            layersContainer: 1200,
+            skinsPath: 'layerslider/skins/'
+                // Please make sure that you didn't forget to add a comma to the line endings
+                // except the last line!
+        });
+    </script>
+
+    <script type="text/javascript">
+    	$(window).bind('mousewheel', function(event) {
+		    if (event.originalEvent.wheelDelta >= 0) {
+
+		    }
+		    else {
+		        $("header").css(backgroundColor = 'white !important')
+		    }
+		});
+    </script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141902328-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-141902328-1');
+</script>
+
+
+</body>
+</html>

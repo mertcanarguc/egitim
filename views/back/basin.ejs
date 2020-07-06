@@ -1,0 +1,63 @@
+<% layout("layout") %>
+
+<div class="row">
+	<section class="panel col-md-12">
+		<header class="panel-heading">
+			<div class="panel-actions">
+				<a href="#" class="fa fa-caret-down"></a>
+			</div>
+
+			<h2 class="panel-title">Basında Biz Ekle</h2>
+		</header>
+		<div class="panel-body">
+			<form method="post" action="/admin/basinekle" enctype="multipart/form-data">
+					<div class="form-group col-md-4">
+						<label class="control-label">Başlık : </label>
+						<input class="form-control" type="text" name="baslik"  placeholder="Başlık">
+					</div>
+					<div class="form-group col-md-4">
+						<label class="control-label">Link :</label>
+						<input type="text" class="form-control" name="link" placeholder="Link">
+					</div>
+					<div class="form-group col-md-4">
+						<label class="control-label">Fotoğraf : </label>
+						<input type="file" class="form-control" name="resim">
+					</div>
+
+					<div class="col-md-12">
+						<button type="submit" class="btn btn-primary pull-right">Ekle</button>
+					</div>
+			</form>
+		</div>
+	</section>
+	<section class="panel col-md-12">
+		<header class="panel-heading">
+			<div class="panel-actions">
+				<a href="#" class="fa fa-caret-down"></a>
+			</div>
+			<h2 class="panel-title">Basın Yazıları</h2>
+		</header>
+		<div class="panel-body">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Başlık</th>
+						<th>Link</th>
+						<th>Fotoğraf</th>
+						<th class="text-right">Eylem</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% basin.forEach( function(data) { %>
+						<tr>
+							<td><a href="/admin/basinduzenle/<%= data._id %>"><%= data.baslik %></a></td>
+							<td><a href="/admin/basinduzenle/<%= data._id %>"><%= data.link %></a></td>
+							<td><img width="200" height="200" src="../../upload/basin/<%= data.resim %>"></td>
+							<th><a class="btn btn-danger pull-right" href="/admin/basinsil/<%= data._id %>">SİL</a></th>
+						</tr>
+					<% }) %>
+				</tbody>
+			</table>
+		</div>
+	</section>
+</div>

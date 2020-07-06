@@ -1,0 +1,41 @@
+<% layout("layout") %>
+
+<div class="row">
+	<section class="panel col-md-12">
+		<header class="panel-heading">
+			<div class="panel-actions">
+				<a href="#" class="fa fa-caret-down"></a>
+			</div>
+							
+			<h2 class="panel-title">Duyuru Ekle</h2>
+		</header>
+		<div class="panel-body">
+			<% if (duyuru) { -%>
+				<form method="post" action="/admin/duyuruduzenle">
+					<input type="hidden" name="duyurid" value="<%= duyuru._id %>">
+					<div class="form-group col-md-4">
+						<label>Egitim : </label>
+						<select class="form-control" name="egitim">
+							<% egitim.forEach( function(data) {%>
+								<option value="<%= data._id %>"><%= data.ad %></option>
+							<% }) %>
+						</select>
+					</div>
+					<div class="form-group col-md-4">
+						<label>Duyuru Metni : </label>
+						<input type="text" name="duyuru" class="form-control" placeholder="Duyuru" value="<%= duyuru.duyuru %>">
+					</div>
+					<div class="form-group col-md-4">
+						<label>Duyuru Linki : </label>
+						<input type="text" name="link" class="form-control" placeholder="Duyuru Linki" value="<%= duyuru.link %>">
+					</div>
+					<div class="col-md-12">
+						<button type="submit" class="btn btn-primary pull-right">Düzenle</button>
+					</div>
+			</form>
+			<% } else { -%>
+				
+			<% } -%>
+		</div>
+	</section>
+</div>

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2f02c01f-fe0f-4468-b46f-9c468cd0212d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/satisController.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/satisController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/back/yoneticiekle.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/back/yoneticiekle.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/front/odeme.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/front/odeme.ejs" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Please fill with your details</find>
+      <find>&amp;thorn;</find>
+      <find>required</find>
+      <find>Required.</find>
+      <find>Required</find>
+      <find>prelo</find>
+      <find>egitimid</find>
+      <find>egiti</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1R8MbhbP8BlDxoGdmPHy7GYBwvk" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="NodeJSConfigurationType" />
+        <option value="js.build_tools.npm" />
+      </set>
+    </option>
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package-lock.json" />
+      <command value="start" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2f02c01f-fe0f-4468-b46f-9c468cd0212d" name="Default Changelist" comment="" />
+      <created>1556975509329</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1556975509329</updated>
+      <workItem from="1556975510650" duration="2150000" />
+      <workItem from="1556994824267" duration="310000" />
+      <workItem from="1556995150423" duration="681000" />
+      <workItem from="1557739884660" duration="4000" />
+      <workItem from="1557941360307" duration="6000" />
+      <workItem from="1558176941458" duration="53000" />
+      <workItem from="1558526757178" duration="494000" />
+      <workItem from="1558535046867" duration="79000" />
+      <workItem from="1558615593341" duration="315000" />
+      <workItem from="1559247381586" duration="263000" />
+      <workItem from="1559287565488" duration="574000" />
+      <workItem from="1559289882599" duration="5000" />
+      <workItem from="1559294563976" duration="4000" />
+      <workItem from="1559471287035" duration="421000" />
+      <workItem from="1559594755474" duration="188000" />
+      <workItem from="1559807778747" duration="107000" />
+      <workItem from="1559807895315" duration="2299000" />
+      <workItem from="1559812021814" duration="301000" />
+      <workItem from="1559812388061" duration="912000" />
+      <workItem from="1559840929646" duration="1129000" />
+      <workItem from="1559843321226" duration="1135000" />
+      <workItem from="1559851892491" duration="246000" />
+      <workItem from="1559888394645" duration="238000" />
+      <workItem from="1560760149188" duration="2000" />
+      <workItem from="1560760759282" duration="68000" />
+      <workItem from="1560925675891" duration="32000" />
+      <workItem from="1560925741658" duration="434000" />
+      <workItem from="1560946743034" duration="1828000" />
+      <workItem from="1560967161559" duration="2614000" />
+      <workItem from="1560973313533" duration="945000" />
+      <workItem from="1561017152676" duration="408000" />
+      <workItem from="1561023422401" duration="2812000" />
+      <workItem from="1561027401009" duration="2229000" />
+      <workItem from="1561033496989" duration="210000" />
+      <workItem from="1561060592869" duration="690000" />
+      <workItem from="1561108560065" duration="210000" />
+      <workItem from="1561110957032" duration="2834000" />
+      <workItem from="1561121914626" duration="1766000" />
+      <workItem from="1561147245768" duration="3448000" />
+      <workItem from="1561274303880" duration="169000" />
+      <workItem from="1561554769251" duration="402000" />
+      <workItem from="1561754229326" duration="11000" />
+      <workItem from="1562063416333" duration="11000" />
+      <workItem from="1562176191055" duration="58000" />
+      <workItem from="1563164172544" duration="413000" />
+      <workItem from="1563165977184" duration="940000" />
+      <workItem from="1563187045572" duration="181000" />
+      <workItem from="1563256777500" duration="31000" />
+      <workItem from="1569044343906" duration="49000" />
+      <workItem from="1569044413955" duration="1502000" />
+      <workItem from="1569061383907" duration="46000" />
+    </task>
+    <task id="LOCAL-00001" summary="asdasd">
+      <created>1559841756618</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1559841756618</updated>
+    </task>
+    <task id="LOCAL-00002" summary="asdasd">
+      <created>1559841908065</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1559841908065</updated>
+    </task>
+    <task id="LOCAL-00003" summary="asdasdadad">
+      <created>1559841968830</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1559841968830</updated>
+    </task>
+    <task id="LOCAL-00004" summary="asdasdadad">
+      <created>1560969122110</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1560969122111</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/../.." />
+    </ignored-roots>
+    <MESSAGE value="asdasd" />
+    <MESSAGE value="asdasdadad" />
+    <option name="LAST_COMMIT_MESSAGE" value="asdasdadad" />
+  </component>
+</project>

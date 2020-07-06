@@ -1,0 +1,67 @@
+<% layout("layout") %>
+
+<div class="row">
+	<section class="panel col-md-12">
+		<header class="panel-heading">
+			<div class="panel-actions">
+				<a href="#" class="fa fa-caret-down"></a>
+			</div>
+							
+			<h2 class="panel-title">Duyuru Ekle</h2>
+		</header>
+		<div class="panel-body">
+			<form method="post" action="/admin/duyuruekle">
+					<div class="form-group col-md-4">
+						<label>Egitim : </label>
+						<select class="form-control" name="egitim">
+							<% egitim.forEach( function(data) {%>
+								<option value="<%= data._id %>"><%= data.ad %></option>
+							<% }) %>
+						</select>
+					</div>
+					<div class="form-group col-md-4">
+						<label>Duyuru Metni : </label>
+						<input type="text" name="duyuru" class="form-control" placeholder="Duyuru">
+					</div>
+					<div class="form-group col-md-4">
+						<label>Duyuru Linki : </label>
+						<input type="text" name="link" class="form-control" placeholder="Duyuru Linki">
+					</div>
+					<div class="col-md-12">
+						<button type="submit" class="btn btn-primary pull-right" formaction="/admin/duyuruekle">Ekle</button>
+					</div>
+			</form>
+		</div>
+	</section>
+	<section class="panel col-md-12">
+		<header class="panel-heading">
+			<div class="panel-actions">
+				<a href="#" class="fa fa-caret-down"></a>
+			</div>
+			<h2 class="panel-title">Duyurular</h2>
+		</header>
+		<div class="panel-body">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Duyuru</th>
+						<th>Eğitim</th>
+						<th>Duyuru Linki</th>
+						<th>Eylem</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% duyuru.forEach( function(duyuru) { %>
+						<tr>
+							<td><%= duyuru.duyuru %></td>
+							<td><%= duyuru.egitimad %></td>
+							<td><%= duyuru.link %></td>
+							<td><a href="/admin/duyurusil/<%= duyuru._id %>" class="btn btn-danger">SİL</a>
+								<a href="/admin/duyurud/<%= duyuru._id %>" class="btn btn-primary">DÜZENLE</a></td>
+						</tr>
+					<% }) %>
+				</tbody>
+			</table>
+		</div>
+	</section>
+</div>

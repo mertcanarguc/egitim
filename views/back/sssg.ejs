@@ -1,0 +1,34 @@
+<% layout("layout") %>
+
+<div class="row">
+	<% if (sss) { -%>
+	<section class="panel col-md-12">
+		<header class="panel-heading">
+			<div class="panel-actions">
+				<a href="#" class="fa fa-caret-down"></a>
+			</div>
+							
+			<h2 class="panel-title">SSS Ekle</h2>
+		</header>
+		<div class="panel-body">
+			<form method="post" action="/admin/sssguncelle">
+					<input type="hidden" name="sid" value="<%= sss._id %>">
+					<div class="form-group col-md-12">
+						<label class="control-label">Soru : </label>
+						<input class="form-control" type="text" name="soru" value="<%= sss.soru %>">
+					</div>
+					<div class="form-group col-md-12">
+						<label class="control-label">Cevap :</label>
+						<textarea class="form-control" name="cevap" rows="5"><%= sss.cevap %></textarea>
+					</div>
+
+					<div class="col-md-12">
+						<button type="submit" class="btn btn-primary pull-right" formaction="/admin/sssguncelle">Güncelle</button>
+					</div>
+			</form>
+		</div>
+	</section>
+	<% } else { -%>
+		
+	<% } -%>
+</div>

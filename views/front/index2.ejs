@@ -1,0 +1,154 @@
+<% layout("layout") %>
+
+<main>
+		<!-- Slider -->
+		<div id="full-slider-wrapper">
+			<div id="layerslider" style="width:100%;height:550px; background-size: cover">
+				<!-- first slide -->
+				<% slider.forEach( function(data) { %>
+					<div class="ls-slide" data-ls="slidedelay: 5000; transition2d:85;">
+						<img style src="../../upload/slider/<%= data.path %>" class="ls-bg img-responsive" alt="Slide background">
+						<!--
+						<h3 class="ls-l slide_typo" style="top: 47%; left: 50%;" data-ls="offsetxin:0;durationin:2000;delayin:1000;easingin:easeOutElastic;rotatexin:90;transformoriginin:50% bottom 0;offsetxout:0;rotatexout:90;transformoriginout:50% bottom 0;">Udema <strong>Excellence</strong> in teaching</h3>
+						<p class="ls-l slide_typo_2" style="top:55%; left:50%;" data-ls="durationin:2000;delayin:1000;easingin:easeOutElastic;">
+							College | lms | University
+						</p>
+						<a class="ls-l btn_1 rounded" style="top:65%; left:50%;white-space: nowrap;" data-ls="durationin:2000;delayin:1400;easingin:easeOutElastic;" href='courses-grid.html'>Read more</a>
+					-->
+					</div>
+				<% }) %>
+			</div>
+		</div>
+		<!-- End layerslider -->
+
+		<div class="features clearfix">
+			<div class="container">
+				<ul>
+					<li><i class="pe-7s-study"></i>
+						<h4>208 öğrenci</h4><span></span>
+					</li>
+					<li><i class="pe-7s-cup"></i>
+						<h4>54 eğitim</h4><span></span>
+					</li>
+					<li><i class="pe-7s-target"></i>
+						<h4>480 canlı ders</h4><span></span>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- /features -->
+		<div class="row">
+			<div class="col-md-12">
+				<% if (user) { -%>
+					<a href="/direkt"><img style="padding-left:20%" src="../ucretsiz-ders-basvuru.gif" width="80%"></a>
+				<% } else { -%>
+					<a href="/basvuru"><img style="padding-left:20%" src="../ucretsiz-ders-basvuru.gif" width="80%"></a>
+				<% } -%>
+			</div>
+		</div>
+		<div class="container-fluid margin_120_0" id="first_section">
+			<div class="main_title_2">
+				<span><em></em></span>
+				<h2>Dini Akademi'de ki başlıca eğitimler</h2>
+				<p></p>
+			</div>
+				<div class="container margin_60_35">
+			<div class="row">
+				<% egitim.forEach( function(data) { %>
+					<div class="col-xl-3 col-lg-3 col-md-3">
+						<div class="box_grid wow">
+							<figure class="block-reveal">
+								<div class="block-horizzontal"></div>
+								<a href="/egitim/<%= data._id %>" class="wish_bt"></a>
+								<a href="/egitim/<%= data._id %>"><img src="../../upload/egitim/<%= data.foto %>" class="img-fluid" alt=""></a>
+								<div class="price"><%= data.tutar %> ₺</div>
+								<div class="preview"><a href="/egitim/<%= data._id %>"><span>Kursu Görüntüle</span></a></div>
+							</figure>
+							<div class="wrapper">
+								<small><%= data.kategori %></small>
+								<h3><%= data.ad %></h3>
+								<p><%= data.aciklama %></p>
+								<div class="rating"><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i><i class="icon_star"></i> <small>(145)</small></div>
+							</div>
+							<ul>
+								<li><i class="icon_clock_alt"></i> 1 saat 30 dakika</li>
+								<li><i class="icon_like"></i> 890</li>
+							</ul>
+
+						</div>
+					</div>
+				<% }) %>
+			</div>
+			<div class="col-md-12">
+				<a class="btn btn-primary pull-right" href="/egitimler">Tüm Kursları Görüntüle</a>
+			</div>
+			<br><br><br>
+			<div class="container">
+				<div class="main_title_2">
+				<span><em></em></span>
+				<h2>Ücretsiz Yayın Tekrarları</h2>
+				<p></p>
+			</div>
+			<!--
+				<iframe style="height: 600px" src="https://www.youtube.com/embed/_fvacUYUxyk=" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<iframe style="width: 535px; height: 400px" src="https://www.youtube.com/embed/Oa27ZOUgT4A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<iframe style="width: 535px; height: 400px" src="https://www.youtube.com/embed/kJKBjtDQTWQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			-->
+			<div class="row">
+				<div class="col-md-1"></div>
+				<div class="col-md-10">
+					<iframe style="height: 500px" src="https://www.youtube.com/embed/videoseries?list=PLG0MYXBAHSJavWTFrMgJh70oAN_m_CTAX" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</div>
+			</div>
+			</div>
+			<!-- /row -->
+			<br>
+			<h2 class="text-center">Blog Yazıları</h2>
+
+				<div class="container">
+					<div class="row">
+						<% blog.forEach( function(data) { %>
+						<div class="col-md-2">
+							<a href="//<%= data.link %>">
+								<img class="img-responsive" style="height: 135px; width: 167px;" src="../upload/blog/<%= data.resim %>">
+								<h6 class="text-center"><%= data.baslik %></h6>
+							</a>
+						</div>
+						<% }) %>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+						<a href="/blog" class="btn btn-primary pull-right" style="margin-bottom: 20px">Tümünü görüntüle</a>
+
+						</div>
+					</div>
+				</div>
+		</div>
+
+		<br>
+		<h2 class="text-center">Basında Biz</h2>
+
+			<div class="container">
+				<div class="row">
+					<% basin.forEach( function(data) { %>
+					<div class="col-md-2">
+						<a href="//<%= data.link %>">
+							<img class="img-responsive" style="height: 135px; width: 167px;" src="../upload/basin/<%= data.resim %>">
+							<h6 class="text-center"><%= data.baslik %></h6>
+						</a>
+					</div>
+					<% }) %>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<a href="/basin" class="btn btn-primary pull-right" style="margin-bottom: 20px">Tümünü görüntüle</a>
+					</div>
+				</div>
+			</div>
+	</div>
+
+
+		<!-- /bg_color_1 -->
+
+		<!--/call_section-->
+	</main>

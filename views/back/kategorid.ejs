@@ -1,0 +1,40 @@
+<% layout("layout") %>
+
+<div class="row">
+	<section class="panel col-md-12">
+		<header class="panel-heading">
+			<div class="panel-actions">
+				<a href="#" class="fa fa-caret-down"></a>
+			</div>
+							
+			<h2 class="panel-title">Kategori Düzenle</h2>
+		</header>
+		<div class="panel-body">
+
+			<% if (kategori) { -%>
+			<form class="form-horizontal form-bordered" method="post" action="/admin/kategorid">
+				<div class="form-row">
+					<div class="form-group col-md-12">
+						<input type="hidden" name="kategorid" value="<%= kategori._id %>">
+						<label class="col-md-3 control-label">Kategori Adı : </label>
+						<div class="col-md-9">
+							<input class="form-control" type="text" name="ad"  placeholder="Kategori Adı Giriniz" value="<%= kategori.ad%>">
+						</div>
+					</div>
+					<div class="form-group col-md-12">
+						<label class="col-md-3 control-label">Açıklama : </label>
+						<div class="col-md-9">
+							<textarea class="form-control" name="aciklama" placeholder="Kategori hakkında açıklama" rows="5"><%= kategori.aciklama %></textarea>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<button type="submit" class="btn btn-primary pull-right" formaction="/admin/kategorid">Düzenle</button>
+					</div>
+				</div>
+			</form>
+			<% } else { -%>
+				
+			<% } -%>
+		</div>
+	</section>
+</div>

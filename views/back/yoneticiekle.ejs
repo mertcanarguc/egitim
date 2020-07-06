@@ -1,0 +1,72 @@
+<% layout("layout") %>
+
+<div class="row">
+	<section class="panel col-md-12">
+		<header class="panel-heading">
+			<div class="panel-actions">
+				<a href="#" class="fa fa-caret-down"></a>
+			</div>
+
+			<h2 class="panel-title">Yönetici Ekle</h2>
+		</header>
+		<div class="panel-body">
+			<form method="post" action="/users/uyekaydet">
+					<input type="hidden" name="tip" value="1">
+					<div class="form-group col-md-3">
+						<label class="control-label">Adı : </label>
+						<input class="form-control" type="text" name="ad"  placeholder="Yönetici Adı">
+					</div>
+					<div class="form-group col-md-3">
+						<label class="control-label">Soyadı :</label>
+						<input type="text" class="form-control" name="soyad" placeholder="Yönetici Soyadı">
+					</div>
+					<div class="col-md-3">
+						<label class="control-label">Mail Adresi : </label>
+						<input type="mail" name="username" class="form-control" placeholder="Mail Adresi">
+					</div>
+					<div class="col-md-3">
+						<label class="control-label">Şifre : </label>
+						<input type="password" name="password" class="form-control" placeholder="Şifre">
+					</div>
+
+					<div class="col-md-12">
+						<button type="submit" formaction="/users/uyekaydet" class="btn btn-primary pull-right">Ekle</button>
+					</div>
+			</form>
+		</div>
+	</section>
+	<section class="panel col-md-12">
+		<header class="panel-heading">
+			<div class="panel-actions">
+				<a href="#" class="fa fa-caret-down"></a>
+			</div>
+			<h2 class="panel-title">Yöneticiler</h2>
+		</header>
+		<div class="panel-body">
+			<table class="table" id="datatable-default">
+				<thead>
+					<tr>
+						<th>Ad - Soyad</th>
+						<th>Mail</th>
+            			<th>Şifre</th>
+						<th class="text-right">Eylem</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% yonetici.forEach( function(data) { %>
+						<% if (data.tip==1) { -%>
+						<tr>
+							<td><a href="/admin/ogrenciadmin/<%= data._id %>"><%= data.ad %> <%= data.soyad %></a></td>
+							<td><%= data.username %></td>
+							<td><%= data.password %></td>
+							<td><a class="btn btn-sm btn-danger" href="/admin/ogrencisil/<%= data._id %>">SİL</a></td>
+						</tr>
+						<% } else { -%>
+							
+						<% } -%>
+					<% }) %>
+				</tbody>
+			</table>
+		</div>
+	</section>
+</div>

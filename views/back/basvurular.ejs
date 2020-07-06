@@ -1,0 +1,34 @@
+<% layout("layout") %>
+
+<div class="row">
+	<section class="panel col-md-12">
+		<header class="panel-heading">
+			<div class="panel-actions">
+				<a href="#" class="fa fa-caret-down"></a>
+			</div>
+			<h2 class="panel-title">Ücretsiz Ders Başvuruları</h2>
+		</header>
+		<div class="panel-body">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Egitim</th>
+						<th>Ad</th>
+						<th>Mail</th>
+						<th>Telefon</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% basvuru.forEach( function(basvuru) { %>
+						<tr>
+							<td><%= basvuru.egitim %></td>
+							<td><%= basvuru.adsoyad %></td>
+							<td><%= basvuru.mail %></td>
+							<td><%= basvuru.tel %></td>
+						</tr>
+					<% }) %>
+				</tbody>
+			</table>
+		</div>
+	</section>
+</div>

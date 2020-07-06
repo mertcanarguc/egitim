@@ -1,0 +1,108 @@
+<% layout("layout") %>
+
+<div class="row">
+	<section class="panel col-md-12">
+		<header class="panel-heading">
+			<div class="panel-actions">
+				<a href="#" class="fa fa-caret-down"></a>
+			</div>
+							
+			<h2 class="panel-title">Eğitim Ekle</h2>
+		</header>
+		<div class="panel-body">
+			<form method="post" action="/admin/egitimekle" enctype="multipart/form-data">
+					<div class="form-group col-md-3">
+						<label class="control-label">Eğitim Adı : </label>
+						<input class="form-control" type="text" name="ad"  placeholder="Eğitim Adı">
+					</div>
+					<div class="form-group col-md-3">
+						<label class="control-label">Eğitmen :</label>
+						<select class="form-control" name="egitmen">
+							<% egitmen.forEach( function(data) { %>
+								<option><%= data.ad %> <%= data.soyad %></option>
+							<% }) %>
+						</select>
+					</div>
+					<div class="form-group col-md-3">
+						<label class="control-label">Kategori :</label>
+						<select class="form-control" name="kategori">
+							<% kategori.forEach( function(data) { %>
+								<option><%= data.ad %></option>
+							<% }) %>
+						</select>
+					</div>
+					<div class="form-group col-md-3">
+						<label class="control-label">Fotoğraf :</label>
+						<input type="file" class="form-control" name="foto">
+					</div>
+					<div class="form-group col-md-12">
+						<label class="control-label">Açıklama : </label>
+						<textarea class="form-control" name="aciklama" placeholder="Kategori hakkında açıklama" rows="5"></textarea>
+					</div>
+					<div class="form-group col-md-2">
+						<label class="control-label">Tutar : </label>
+						<input type="number" name="tutar" class="form-control" placeholder="Eğitim Ücreti">
+					</div>
+					<div class="form-group col-md-2">
+						<label class="control-label">Kaç Ders : </label>
+						<input type="number" name="kacv" class="form-control" placeholder="Kurs Kaç Video">
+					</div>
+					<div class="form-group col-md-2">
+						<label class="control-label">Kaç Saat : </label>
+						<input type="number" name="saat" class="form-control">
+					</div>
+					<div class="form-group col-md-2">
+						<label class="control-label">Kaç Hafta : </label>
+						<input type="number" name="hafta" class="form-control">
+					</div>
+					<div class="form-group col-md-2">
+						<label class="control-label">Kaç Ay : </label>
+						<input type="number" name="ay" class="form-control">
+					</div>
+					<div class="form-group col-md-2">
+						<label>Durum</label>
+						<select class="form-control" name="durum">
+							<option value="1">Aktif</option>
+							<option value="0">Pasif</option>
+						</select>
+					</div>
+					<div class="col-md-12">
+						<button type="submit" class="btn btn-primary pull-right">Ekle</button>
+					</div>
+			</form>
+		</div>
+	</section>
+	<section class="panel col-md-12">
+		<header class="panel-heading">
+			<div class="panel-actions">
+				<a href="#" class="fa fa-caret-down"></a>
+			</div>
+			<h2 class="panel-title">Eğitimler</h2>
+		</header>
+		<div class="panel-body">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Eğitim : </th>
+						<th>Eğitmen : </th>
+						<th>Kategori : </th>
+						<th>Fotoğraf : </th>
+						<th class="text-right">Eylem</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% egitim.forEach( function(data) { %>
+						<tr>
+							<td><a href="/admin/egitim/<%= data._id %>"><%= data.ad %></a></td>
+							<td><%= data.egitmen %></td>
+							<td><%= data.kategori %></td>
+							<td><img width="140" height="100" src="../../upload/egitim/<%= data.foto %>"></td>
+							<th><a class="btn btn-danger pull-right" href="/admin/egitimsil/<%= data._id %>">SİL</a>
+								<a class="btn btn-primary pull-right" href="/admin/egitimd/<%= data._id %>">DÜZENLE</a></th>
+						</tr>
+					<% }) %>
+				</tbody>
+			</table>
+		</div>
+	</section>
+</div>

@@ -1,0 +1,73 @@
+<% layout("layout") %>
+
+<div class="row">
+	<section class="panel col-md-12">
+		<header class="panel-heading">
+			<div class="panel-actions">
+				<a href="#" class="fa fa-caret-down"></a>
+			</div>
+							
+			<h2 class="panel-title">Eğitmen Ekle</h2>
+		</header>
+		<div class="panel-body">
+			<form method="post" action="/admin/egitmenekle" enctype="multipart/form-data">
+					<div class="form-group col-md-3">
+						<label class="control-label">Eğitmen Adı : </label>
+						<input class="form-control" type="text" name="ad"  placeholder="Eğitmen Adı">
+					</div>
+					<div class="form-group col-md-3">
+						<label class="control-label">Eğitmen Soyadı :</label>
+						<input type="text" class="form-control" name="soyad" placeholder="Eğitmen Soyadı">
+					</div>
+					<div class="form-group col-md-3">
+						<label class="control-label">Eğitmenin Branşı :</label>
+						<input type="text" name="brans" placeholder="Eğitmenin Branşı" class="form-control">
+					</div>
+					<div class="form-group col-md-3">
+						<label class="control-label">Fotoğraf</label>
+						<input type="file" class="form-control" name="foto">
+					</div>
+					<div class="form-group col-md-12">
+						<label class="control-label">Açıklama : </label>
+						<textarea class="form-control" name="aciklama" placeholder="Kategori hakkında açıklama" rows="5"></textarea>
+					</div>
+
+					<div class="col-md-12">
+						<button type="submit" class="btn btn-primary pull-right">Ekle</button>
+					</div>
+			</form>
+		</div>
+	</section>
+	<section class="panel col-md-12">
+		<header class="panel-heading">
+			<div class="panel-actions">
+				<a href="#" class="fa fa-caret-down"></a>
+			</div>
+			<h2 class="panel-title">Eğitmenler</h2>
+		</header>
+		<div class="panel-body">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Ad</th>
+						<th>Soyad</th>
+						<th>Branş</th>
+						<th>Açıklama</th>
+						<th class="text-right">Eylem</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% egitmen.forEach( function(data) { %>
+						<tr>
+							<td><a href="/admin/egitmen/<%= data._id %>"><%= data.ad %></a></td>
+							<td><a href="/admin/egitmen/<%= data._id %>"><%= data.soyad %></a></td>
+							<td><%= data.brans %></td>
+							<td><%= data.aciklama %></td>
+							<th><a class="btn btn-danger pull-right" href="/admin/egitmensil/<%= data._id %>">SİL</a></th>
+						</tr>
+					<% }) %>
+				</tbody>
+			</table>
+		</div>
+	</section>
+</div>

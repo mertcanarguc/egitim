@@ -1,0 +1,57 @@
+<% layout("layout") %>
+
+<div class="row">
+	<section class="panel col-md-12">
+		<header class="panel-heading">
+			<div class="panel-actions">
+				<a href="#" class="fa fa-caret-down"></a>
+			</div>
+							
+			<h2 class="panel-title">Ücretsiz Ders Ekle</h2>
+		</header>
+		<div class="panel-body">
+			<form method="post" action="/admin/linkekle">
+					<div class="form-group col-md-4">
+						<label class="control-label">Başlık : </label>
+						<input class="form-control" type="text" name="baslik"  placeholder="Başlık">
+					</div>
+					<div class="form-group col-md-4">
+						<label class="control-label">Link :</label>
+						<input type="text" class="form-control" name="link" placeholder="Link">
+					</div>
+
+					<div class="col-md-12">
+						<button type="submit" class="btn btn-primary pull-right">Ekle</button>
+					</div>
+			</form>
+		</div>
+	</section>
+	<section class="panel col-md-12">
+		<header class="panel-heading">
+			<div class="panel-actions">
+				<a href="#" class="fa fa-caret-down"></a>
+			</div>
+			<h2 class="panel-title">Ücretsiz Dersler</h2>
+		</header>
+		<div class="panel-body">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Başlık</th>
+						<th>Link</th>
+						<th class="text-right">Eylem</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% link.forEach( function(data) { %>
+						<tr>
+							<td><%= data.baslik %></td>
+							<td><%= data.link %></td>
+							<th><a class="btn btn-danger pull-right" href="/admin/linksil/<%= data._id %>">SİL</a></th>
+						</tr>
+					<% }) %>
+				</tbody>
+			</table>
+		</div>
+	</section>
+</div>

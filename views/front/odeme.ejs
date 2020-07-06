@@ -1,0 +1,87 @@
+<% layout("layout") %>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+
+<main>
+		<section id="hero_in" class="cart_section">
+			<div class="wrapper">
+					<h1 class="fadeInUp"><span></span>Ödeme İşlemİ</h1>
+			</div>
+		</section>
+		<!--/hero_in-->
+
+		<% if (user) { -%>
+			<form action="/satisyap" method="post">
+				<% if (egitim) { -%>
+				<input type="hidden" name="egtmid" value="<%= egitim._id %>">
+				
+			<div class="bg_color_1">
+			<div class="container margin_60_35">
+				<div class="row">
+					<div class="col-md-3"></div>
+					<aside class="col-lg-6" id="sidebar">
+						<div class="box_detail">
+							<figure>
+							<img src="../../upload/egitim/<%= egitim.foto %>" alt="" class="img-fluid"><span></span></a>
+							</figure>
+							<span class="text-center"><%= egitim.ad %></span>
+							<div class="price">
+								  <%= egitim.tutar %> ₺<!--<span class="original_price"><em>$49</em>60% discount price</span>-->
+							</div>
+
+							<button type="submit" class="btn_1 full-width" formaction="/satisyap">ÖDEME YAP!</button>
+							<div id="list_feat">
+								<!--
+								<h3>What's includes</h3>
+								<ul>
+									<li><i class="icon_mobile"></i>Mobile support</li>
+									<li><i class="icon_archive_alt"></i>Lesson archive</li>
+									<li><i class="icon_mobile"></i>Mobile support</li>
+									<li><i class="icon_chat_alt"></i>Tutor chat</li>
+									<li><i class="icon_document_alt"></i>Course certificate</li>
+								</ul>
+								-->
+							</div>
+						</div>
+					</aside>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		</form>
+			<% } else { -%>
+					
+				<% } -%>
+		<% } else { -%>
+			<h1 class="text-center"><a href="/users/login">LÜTFEN GİRİŞ YAPINIZ</a></h1>
+		<% } -%>
+		<!-- /bg_color_1 -->
+	</main>
+
+	<script type="text/javascript">
+
+		function isNumberKey(evt) {
+		    var charCode = (evt.which) ? evt.which : event.keyCode;
+		    if (charCode > 31 && (charCode < 48 || charCode > 57))
+		        return false;
+		    return true;
+		}
+	</script>
+
+	<script type="text/javascript">
+		new Vue({
+			el:"app",
+			data:{
+
+			},
+			methods:{
+				
+			}
+		})
+	</script>
+
+
+
+
+

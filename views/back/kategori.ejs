@@ -1,0 +1,62 @@
+<% layout("layout") %>
+
+<div class="row">
+	<section class="panel col-md-5">
+		<header class="panel-heading">
+			<div class="panel-actions">
+				<a href="#" class="fa fa-caret-down"></a>
+			</div>
+							
+			<h2 class="panel-title">Kategori Ekle</h2>
+		</header>
+		<div class="panel-body">
+			<form class="form-horizontal form-bordered" method="post" action="/admin/kategoriekle">
+				<div class="form-row">
+					<div class="form-group">
+						<label class="col-md-3 control-label">Kategori Adı : </label>
+						<div class="col-md-9">
+							<input class="form-control" type="text" name="ad"  placeholder="Kategori Adı Giriniz">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-3 control-label">Açıklama : </label>
+						<div class="col-md-9">
+							<textarea class="form-control" name="aciklama" placeholder="Kategori hakkında açıklama" rows="5"></textarea>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<button type="submit" class="btn btn-primary pull-right">Ekle</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+	<section class="panel col-md-7">
+		<header class="panel-heading">
+			<div class="panel-actions">
+				<a href="#" class="fa fa-caret-down"></a>
+			</div>
+			<h2 class="panel-title">Kategoriler</h2>
+		</header>
+		<div class="panel-body">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Ad</th>
+						<th>Açıklama</th>
+						<th class="text-right">Eylem</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% kategori.forEach( function(data) { %>
+						<tr>
+							<td><a href="/admin/kategorid/<%= data._id %>"><%= data.ad %></a></td>
+							<td><%= data.aciklama %></td>
+							<td><a class="pull-right btn btn-danger" href="/admin/kategorisil/<%= data._id %>">SİL</a></td>
+						</tr>
+					<% }) %>
+				</tbody>
+			</table>
+		</div>
+	</section>
+</div>

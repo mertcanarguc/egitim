@@ -1,0 +1,33 @@
+<% layout("layout") %>
+
+<div class="row">
+	<section class="panel col-md-12">
+		<header class="panel-heading">
+			<div class="panel-actions">
+				<a href="#" class="fa fa-caret-down"></a>
+			</div>
+							
+			<h2 class="panel-title">adlı öğrencinin satın aldığı dersler</h2>
+		</header>
+		<div class="panel-body">
+			<table class="table table-responsive">
+				<thead>
+					<tr>
+						<th>Eğitim</th>
+						<th>Tarih</th>
+						<th>Tutar</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% satis.forEach( function(data) { %>
+						<tr>
+							<td><a href="/admin/egitim/<%= data.egitimid %>"><%= data.egitimad %></a></td>
+							<td><%= moment(data.createdAt).add(1,"d").format( 'DD-MMMM-YYYY') %></td>
+							<td><%= data.tutar %></td>
+						</tr>
+					<% }) %>
+				</tbody>
+			</table>
+		</div>
+	</section>
+</div>

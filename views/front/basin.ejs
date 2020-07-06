@@ -1,0 +1,16 @@
+<% layout("layout") %>
+<br><br><br><br><br><br>
+<h2 class="text-center">Basında Biz</h2>
+
+			<div class="container">
+				<div class="row">
+					<% basin.forEach( function(data) { %>
+					<div class="col-md-2">
+						<a href="//<%= data.link %>">
+							<img class="img-responsive" style="height: 135px; width: 167px;" src="../upload/basin/<%= data.resim %>">
+							<h6 class="text-center"><%= data.baslik %></h6>
+						</a>
+					</div>
+					<% }) %>
+				</div>
+			</div>

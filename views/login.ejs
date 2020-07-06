@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Dini Akademi Online Eğitim Platformu">
+    <meta name="author" content="Mertcan Arguç">
+    <title>DİNİ AKADEMİ</title>
+
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="../../../img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="../../../img/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="../../../img/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="../../../img/apple-touch-icon-144x144-precomposed.png">
+
+    <!-- BASE CSS -->
+    <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../css/style.css" rel="stylesheet">
+	<link href="../../../css/vendors.css" rel="stylesheet">
+	<link href="../../../css/icon_fonts/css/all_icons.min.css" rel="stylesheet">
+
+    <!-- YOUR CUSTOM CSS -->
+    <link href="../../../css/custom.css" rel="stylesheet">
+
+</head>
+
+<body id="login_bg">
+	
+	<div id="preloader">
+		<div data-loader="circle-side"></div>
+	</div>
+	<!-- End Preload -->
+	
+	<div id="login">
+		<aside>
+			<figure>
+				<a href="/"><img src="../../../dini-akademi-logo.png" width="149" height="62" data-retina="true" alt=""></a>
+			</figure>
+			  <form action="/users/login" method="post">
+				<div class="form-group">
+					<span class="input">
+					<input class="input_field" type="email" autocomplete="off" name="username">
+						<label class="input_label">
+						<span class="input__label-content">Mail Adresiniz</span>
+					</label>
+					</span>
+
+					<span class="input">
+					<input class="input_field" type="password" name="password">
+						<label class="input_label">
+						<span class="input__label-content">Şifreniz</span>
+					</label>
+					</span>
+					<small><a href="#0">Şifrenizi mi unuttunuz ?</a></small>
+				</div>
+				<button class="btn_1 rounded full-width add_top_60" type="submit" formaction="/users/login">Dini Akademiye Giriş Yap</button>
+				<div class="text-center add_top_10">Henüz üye değil misiniz ? <br><strong><a href="/users/register">Üye olmak istiyorum !</a></strong></div>
+				<hr>
+
+				<div class="text-center add_top_10">Mobil derse nasıl giriş yapabilirim ? <br><strong><a href="https://www.youtube.com/watch?v=WFgdtWZsfqc">Buradan İzle</a></strong></div>
+				<div class="text-center add_top_10">Masaüstü derse nasıl giriş yapabilirim ? <br><strong><a href="https://www.youtube.com/watch?v=46AOhVFzr9s">Buradan İzle</a></strong></div>
+
+			</form>
+			<div class="copy">© 2019 Dini Akademi</div>
+		</aside>
+	</div>
+	<!-- /login -->
+		
+	<!-- COMMON SCRIPTS -->
+    <script src="../../../js/jquery-2.2.4.min.js"></script>
+    <script src="../../../js/common_scripts.js"></script>
+    <script src="../../../js/main.js"></script>
+	<script src="../../../assets/validate.js"></script>	
+  
+</body>
+</html>

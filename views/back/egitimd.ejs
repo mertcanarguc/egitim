@@ -1,0 +1,77 @@
+<% layout("layout") %>
+
+<div class="row">
+	<section class="panel col-md-12">
+		<header class="panel-heading">
+			<div class="panel-actions">
+				<a href="#" class="fa fa-caret-down"></a>
+			</div>
+							
+			<h2 class="panel-title">Eğitim Ekle</h2>
+
+		</header>
+		<% if (egitim) { -%>
+			<div class="panel-body">
+			<form method="post" action="/admin/egitimd">
+					<input type="hidden" name="egitimid" value="<%= egitim._id %>">
+					<div class="form-group col-md-4">
+						<label class="control-label">Eğitim Adı : </label>
+						<input class="form-control" type="text" name="ad"  placeholder="Eğitim Adı" value="<%= egitim.ad %>">
+					</div>
+					<div class="form-group col-md-4">
+						<label class="control-label">Eğitmen :</label>
+						<select class="form-control" name="egitmen">
+							<% egitmen.forEach( function(data) { %>
+								<option><%= data.ad %> <%= data.soyad %></option>
+							<% }) %>
+						</select>
+					</div>
+					<div class="form-group col-md-4">
+						<label class="control-label">Kategori :</label>
+						<select class="form-control" name="kategori">
+							<% kategori.forEach( function(data) { %>
+								<option><%= data.ad %></option>
+							<% }) %>
+						</select>
+					</div>
+					<div class="form-group col-md-12">
+						<label class="control-label">Açıklama : </label>
+						<textarea class="form-control" name="aciklama" placeholder="Kategori hakkında açıklama" rows="5"><%= egitim.aciklama %></textarea>
+					</div>
+					<div class="form-group col-md-2">
+						<label class="control-label">Tutar : </label>
+						<input type="number" name="tutar" class="form-control" placeholder="Eğitim Ücreti" value="<%= egitim.tutar %>">
+					</div>
+					<div class="form-group col-md-2">
+						<label class="control-label">Kaç Ders : </label>
+						<input type="number" name="kacv" class="form-control" placeholder="Kurs Kaç Video" value="<%= egitim.kacv %>">
+					</div>
+					<div class="form-group col-md-2">
+						<label class="control-label">Kaç Saat : </label>
+						<input type="number" name="saat" class="form-control" value="<%= egitim.saat %>">
+					</div>
+					<div class="form-group col-md-2">
+						<label class="control-label">Kaç Hafta : </label>
+						<input type="number" name="hafta" class="form-control" value="<%= egitim.hafta %>">
+					</div>
+					<div class="form-group col-md-2">
+						<label class="control-label">Kaç Ay : </label>
+						<input type="number" name="ay" class="form-control" value="<%= egitim.ay %>">
+					</div>
+					<div class="form-group col-md-2">
+						<label>Durum</label>
+						<select class="form-control" name="durum">
+							<option value="1">Aktif</option>
+							<option value="0">Pasif</option>
+						</select>
+					</div>
+					<div class="col-md-12">
+						<button type="submit" class="btn btn-primary pull-right" formaction="/admin/egitimd">Düzenle</button>
+					</div>
+			</form>
+		</div>
+		<% } else { -%>
+			
+		<% } -%>
+	</section>
+</div>

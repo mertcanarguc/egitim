@@ -1,0 +1,36 @@
+<% layout("layout") %>
+
+<div class="row">
+	<section class="panel col-md-12">
+		<header class="panel-heading">
+			<div class="panel-actions">
+				<a href="#" class="fa fa-caret-down"></a>
+			</div>
+			<h2 class="panel-title">SATIŞLAR</h2>
+		</header>
+		<div class="panel-body">
+			<table class="table" id="datatable-default">
+				<thead>
+					<tr>
+						<th>Ad Soyad</th>
+						<th>Eğitim</th>
+						<th>Eğitim Kategorisi</th>
+						<th>Tarih</th>
+						<th>Tutar</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% satis.forEach( function(satis) { %>
+						<tr>
+							<td><%= satis.userad %></td>
+							<td><a href="/admin/egitimler"><%= satis.egitimad %></a></td>
+							<td><%= satis.egitimcat %></td>
+							<td><%= moment(satis.createdAt).add(1,"hours").format("DD-MMMM-YYYY HH:MM:ss","tr") %></td>
+							<td><%= satis.tutar %></td>
+						</tr>
+					<% }) %>
+				</tbody>
+			</table>
+		</div>
+	</section>
+</div>

@@ -1,0 +1,79 @@
+<% layout("layout") %>
+
+<% layout("layout") %>
+
+<div class="row">
+	<section class="panel col-md-12">
+		<header class="panel-heading">
+			<div class="panel-actions">
+				<a href="#" class="fa fa-caret-down"></a>
+			</div>
+							
+			<h2 class="panel-title">Slider Ekle</h2>
+		</header>
+		<div class="panel-body">
+			<form method="post" action="/admin/sliderekle" enctype="multipart/form-data">
+				<div class="form-group col-md-3">
+					<label>Slider Başlık : </label>
+					<input class="form-control" type="text" name="baslik"  placeholder="Slider Başlık">
+				</div>
+				<div class="form-group col-md-9">
+					<label>Açıklama : </label>
+					<input type="text" class="form-control" name="aciklama" placeholder="Resim Açıklaması">
+				</div>
+				<div class="form-group col-md-6">
+					<label>Link : </label>
+					<input type="text" class="form-control" name="link" placeholder="Kampanya Linkini Ekle">
+				</div>
+				<div class="form-group col-md-4">
+					<label>Fotoğraf :</label>
+					<input type="file" class="form-control" name="foto">
+				</div>
+				<div class="form-group col-md-2">
+					<label>Durum : </label>
+					<select class="form-control" name="durum">
+						<option value="1">Aktif</option>
+						<option value="0">Pasif</option>
+					</select>
+				</div>
+				<div class="col-md-12">
+					<button type="submit" class="btn btn-primary pull-right" formaction="/admin/sliderekle">Ekle</button>
+				</div>
+			</form>
+		</div>
+	</section>
+	<section class="panel col-md-12">
+		<header class="panel-heading">
+			<div class="panel-actions">
+				<a href="#" class="fa fa-caret-down"></a>
+			</div>
+			<h2 class="panel-title">Sliderler</h2>
+		</header>
+		<div class="panel-body">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Fotoğraf</th>
+						<th>Başlık</th>
+						<th>Açıklama</th>
+						<th>Link</th>
+						<th>Durum</th>
+						<th>Eylem</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% slider.forEach( function(slider) { %>
+						<tr>
+							<td><img height="100" width="100" src="../../upload/slider/<%= slider.path %>"></td>
+							<td><%= slider.baslik %></td>
+							<td><%= slider.aciklama %></td>
+							<td><%= slider.link %></td>
+							<td><%= slider.durum %></td>
+							<td><a href="/admin/slidersil/<%= slider._id %>" class="btn btn-danger" role="button" >SİL</a></td>
+						</tr>
+					<% }) %>
+				</tbody>
+			</table>
+		</div>
+	</section>
+</div>

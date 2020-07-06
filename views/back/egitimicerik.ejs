@@ -1,0 +1,127 @@
+<% layout("layout") %>
+
+<% if (egitim) { -%>
+	<div class="row">
+	<section class="panel col-md-5">
+		<header class="panel-heading">
+			<div class="panel-actions">
+				<a href="#" class="fa fa-caret-down"></a>
+			</div>
+							
+			<h2 class="panel-title">Video Ekle</h2>
+		</header>
+		<div class="panel-body">
+			<form class="form-horizontal form-bordered" method="post" action="/admin/videoekle" enctype="multipart/form-data">
+				<div class="form-row">
+					<input type="hidden" name="egitid" value="<%= egitim._id %>">
+					<div class="form-group">
+						<label class=" col-md-3 control-label">Başlık : </label>
+						<div class="col-md-9">
+							<input type="text" name="baslik" class="form-control" placeholder="Video Başlığı">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-3 control-label">Video : </label>
+						<div class="col-md-9">
+							<input class="form-control" type="file" name="video"  placeholder="Kapak Fotoğrafı Ekleyiniz">
+						</div>
+					</div>
+					<div class="col-md-12">
+						<button type="submit" class="btn btn-primary pull-right" formaction="/admin/videoekle">Ekle</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+	<section class="panel col-md-7">
+		<header class="panel-heading">
+			<div class="panel-actions">
+				<a href="#" class="fa fa-caret-down"></a>
+			</div>
+			<h2 class="panel-title">Videolar</h2>
+		</header>
+		<div class="panel-body">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Başlık</th>
+						<th>Video</th>
+						<th class="text-right">Eylem</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% videos.forEach( function(data) { %>
+						<tr>
+							<td><%= data.baslik %></td>
+							<td><video width="320" height="240" controls>
+							  <source src="../../upload/video/<%= data.video %>" type="video/mp4">
+							  <source src="movie.ogg" type="video/ogg">
+							
+							</video></td>
+							<td><a class="btn btn-danger" href="/admin/videosil/<%= data.video %>">SİL</a></td>
+						</tr>
+					<% }) %>
+				</tbody>
+			</table>
+		</div>
+	</section>
+	<section class="panel col-md-12">
+		<header class="panel-heading">
+			<div class="panel-actions">
+				<a href="#" class="fa fa-caret-down"></a>
+			</div>
+			<h2 class="panel-title">Eğitimi Satın Alanlar</h2>
+		</header>
+		<div class="panel-body">
+			<table class="table table-bordered table-striped mb-none" id="datatable-default">
+				<thead>
+					<tr>
+						<th>Ad Soyad</th>
+						<th>Tarih</th>
+						<th>Tutar</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% satis.forEach( function(data) { %>
+						<tr>
+							<td><a href="/admin/ogrenci/<%= data.userid %>"><%= data.userad %></a></td>
+							<td><%= data.userad %></td>
+							<td><%= data.userad %></td>
+						</tr>
+					<% }) %>
+				</tbody>
+			</table>
+		</div>
+	</section>
+	<section class="panel col-md-12">
+		<header class="panel-heading">
+			<div class="panel-actions">
+				<a href="#" class="fa fa-caret-down"></a>
+			</div>
+			<h2 class="panel-title">Eğitime Başvuranlar</h2>
+		</header>
+		<div class="panel-body">
+			<table class="table table-bordered table-striped mb-none" id="datatable-default">
+				<thead>
+					<tr>
+						<th>Ad Soyad</th>
+						<th>Tarih</th>
+						<th>Tel</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% basvuru.forEach( function(data) { %>
+						<tr>
+							<td><%= data.adsoyad %></a></td>
+							<td><%= data.mail %></td>
+							<td><%= data.tel %></td>
+						</tr>
+					<% }) %>
+				</tbody>
+			</table>
+		</div>
+	</section>
+</div>
+<% } else { -%>
+	
+<% } -%>

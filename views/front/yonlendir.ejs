@@ -1,0 +1,39 @@
+<% layout("layout") %>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="row">
+	<div class="col-md-2"></div>
+	<div class="col-md-8">
+		<table class="table table-responsive">
+			<thead>
+				<tr>
+					<th class="text-center"><p class="text-center">Ders Adı</p></th>
+					<th class="text-center"><p class="text-center">Başlık</p></th>
+				</tr>
+			</thead>
+			<tbody>
+				<% link.forEach( function(data) { %>
+					<tr>
+						<td><p class="text-center"><b><%= data.baslik %></b></p></td>
+						<td><p class="text-center"><a href="//<%= data.link %>">> Ders gitmek için tıklayın</a></p></td>
+					</tr>
+				<% }) %>
+			</tbody>
+		</table>
+	</div>
+	<div class="col-md-2"></div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

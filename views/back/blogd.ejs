@@ -1,0 +1,31 @@
+<% layout("layout") %>
+
+<section class="panel col-md-12">
+		<header class="panel-heading">
+			<div class="panel-actions">
+				<a href="#" class="fa fa-caret-down"></a>
+			</div>
+
+			<h2 class="panel-title">Blog Yazısı Düzenle</h2>
+		</header>
+		<div class="panel-body">
+			<% if (blog) { -%>
+				<form method="post" action="/admin/blogduzenle">
+					<input type="hidden" name="blogid" value="<%= blog._id %>">
+					<div class="form-group col-md-4">
+						<label class="control-label">Başlık : </label>
+						<input class="form-control" type="text" name="baslik"  placeholder="Başlık" value="<%= blog.baslik %>">
+					</div>
+					<div class="form-group col-md-4">
+						<label class="control-label">Link :</label>
+						<input type="text" class="form-control" name="link" placeholder="Link" value="<%= blog.link %>">
+					</div>
+					<div class="col-md-12">
+						<button type="submit" class="btn btn-primary pull-right">Ekle</button>
+					</div>
+			</form>
+			<% } else { -%>
+
+			<% } -%>
+		</div>
+	</section>

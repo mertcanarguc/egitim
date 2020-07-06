@@ -1,0 +1,53 @@
+<% layout("layout") %>
+
+<main>
+		<section id="hero_in" class="courses">
+			<div class="wrapper">
+				<div class="container">
+					<h1 class="fadeInUp"><span></span>Online Eğitimler</h1>
+				</div>
+			</div>
+		</section>
+		<!--/hero_in-->
+
+		<!-- /filters -->
+
+		<div class="container margin_60_35">
+			<div class="row">
+				<% egitim.forEach( function(data) { %>
+					<div class="col-xl-4 col-lg-6 col-md-6">
+						<div class="box_grid wow">
+							<figure class="block-reveal">
+								<div class="block-horizzontal"></div>
+								<a href="/egitim/<%= data._id %>" class="wish_bt"></a>
+								<a href="/egitim/<%= data._id %>"><img src="../../upload/egitim/<%= data.foto %>" class="img-fluid" alt=""></a>
+								<div class="price"><%= data.tutar %> ₺</div>
+								<div class="preview"><a href="/egitim/<%= data._id %>"><span>Kursu Görüntüle</span></a></div>
+							</figure>
+							<div class="wrapper">
+								<small><%= data.kategori %></small>
+								<h3><%= data.ad %></h3>
+								<p><%= data.aciklama %></p>
+								<div class="rating"><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i><i class="icon_star"></i> <small>(145)</small></div>
+							</div>
+							<ul>
+								<li><i class="icon_clock_alt"></i> 1 saat 30 dakika</li>
+								<li><i class="icon_like"></i> 890</li>
+								<% if (user) { -%>
+								<li><a href="/onbasvuruyap/<%= data._id %>">Başvur</a></li>
+														
+								<% } else { -%>
+																	
+								<% } -%>
+							</ul>
+						</div>
+					</div>
+				<% }) %>
+			</div>
+			<!-- /row -->
+			<p class="text-center"><a href="#0" class="btn_1 rounded add_top_30">Daha Fazlası</a></p>
+		</div>
+		<!-- /container -->
+
+		<!-- /bg_color_1 -->
+	</main>

@@ -1,0 +1,138 @@
+<% layout("layout") %>
+
+<div class="row">
+	<% if (ogrenci) { -%>
+	<section class="panel col-md-12">
+		<header class="panel-heading">
+			<div class="panel-actions">
+				<a href="#" class="fa fa-caret-down"></a>
+			</div>
+
+			<h2 class="panel-title">Öğrenci Ekle</h2>
+		</header>
+			<div class="panel-body">
+			<form method="post" action="/admin/ogrenciupdate">
+					<input type="hidden" name="ogrenci" value="<%= ogrenci._id %>">
+					<div class="form-group col-md-3">
+						<label class="control-label">Öğrenci Adı : </label>
+						<input class="form-control" type="text" name="ad"  placeholder="Öğrenci Adı" value="<%= ogrenci.ad %>">
+					</div>
+					<div class="form-group col-md-3">
+						<label class="control-label">Öğrenci Soyadı :</label>
+						<input type="text" class="form-control" name="soyad" placeholder="Öğrenci Soyadı" value="<%= ogrenci.soyad %>">
+					</div>
+					<div class="form-group col-md-3">
+						<label class="control-label">Öğrenci TC :</label>
+						<input type="text" name="tc" class="form-control" placeholder="TC Kimlik No" value="<%= ogrenci.tc %>">
+					</div>
+					<div class="form-group col-md-3">
+						<label class="control-label">Okulu :</label>
+						<input type="text" class="form-control" name="okul" placeholder="Okul" value="<%= ogrenci.okul %>">
+					</div>
+					<div class="form-group col-md-3">
+						<label class="control-label">Yaş : </label>
+						<input type="number" name="yas" class="form-control" placeholder="Yaş" value="<%= ogrenci.yas %>">
+					</div>
+					<div class="form-group col-md-3">
+						<label class="control-label">Cinsiyet :</label>
+						<select class="form-control" name="cinsiyet">
+							<option value="Erkek">Erkek</option>
+							<option value="Kadın">Kadın</option>
+						</select>
+					</div>
+					<div class="form-group col-md-3">
+						<label class="control-label">Şehir :</label>
+						<input type="text" name="sehir" class="form-control" placeholder="Şehir" value="<%= ogrenci.sehir %>">
+					</div>
+					<div class="form-group col-md-3">
+						<label class="control-label">İlçe :</label>
+						<input type="text" name="ilce" class="form-control" placeholder="İlçe" value="<%= ogrenci.ilce %>">
+					</div>
+					<div class="col-md-6">
+						<label class="control-label">Adres : </label>
+						<input type="text" name="adres" class="form-control" placeholder="Adres" value="<%= ogrenci.adres %>">
+					</div>
+					<div class="col-md-3">
+						<label class="control-label">Mail Adresi : </label>
+						<input type="mail" name="username" class="form-control" placeholder="Mail Adresi" value="<%= ogrenci.username %>">
+					</div>
+
+					<div class="col-md-12">
+						<button type="submit" formaction="/admin/ogrenciupdate" class="btn btn-primary pull-right">Ekle</button>
+					</div>
+			</form>
+		</div>
+	</section>
+	<section class="panel col-md-12">
+		<div class="panel-body">
+			<form class="/admin/ogrencisifre" method="post">
+				<div class="form-group col-md-4">
+					<input type="hidden" name="oid" value="<%= ogrenci._id %>">
+					<input type="hidden" name="omail" value="<%= ogrenci.username %>">
+					<input type="text" name="password" class="form-control" placeholder="Öğrenci Şifre Değiştir">
+				</div>
+				<button type="submit" class="btn btn-success pull-right" formaction="/admin/ogrencisifre">Şifre Değiştir</button>
+			</form>
+		</div>
+	</section>
+	<div class="row">
+		<% if (satis) { -%>
+
+
+			<section class="panel col-md-12">
+				<div class="modal fade" id="myModal" role="dialog">
+				    <div class="modal-dialog">
+				    
+				      <!-- Modal content-->
+				      <div class="modal-content">
+				        <div class="modal-header">
+				          <button type="button" class="close" data-dismiss="modal">&times;</button>
+				          <h4 class="modal-title">İŞLEM</h4>
+				        </div>
+				        <div class="modal-body">
+				          <button class="btn btn-success" style="width: 100%">VAZGEÇ</button>
+				          <button class="btn btn-success" style="width: 100%">VAZGEÇ</button>
+				        </div>
+				      </div>
+				      
+				    </div>
+				  </div>
+				<header class="panel-heading">
+					<div class="panel-actions">
+						<a href="#" class="fa fa-caret-down"></a>
+					</div>
+					<h2 class="panel-title">SATIŞLAR</h2>
+				</header>
+				<div class="panel-body">
+					<table class="table" id="datatable-default">
+						<thead>
+							<tr>
+								<th>Eğitim</th>
+								<th>Eğitim Kategorisi</th>
+								<th>Tarih</th>
+								<th>Tutar</th>
+							</tr>
+						</thead>
+						<tbody>
+							<% satis.forEach( function(satis) { %>
+								<tr>
+									<td><a href="/admin/egitimler"><%= satis.egitimad %></a></td>
+									<td><%= satis.egitimcat %></td>
+									<td><%= moment(satis.createdAt).add(1,"hours").format("DD-MMMM-YYYY HH:MM:ss","tr") %></td>
+									<td><%= satis.tutar %></td>
+								</tr>
+							<% }) %>
+						</tbody>
+					</table>
+				</div>
+			</section>
+
+
+		<% } else { -%>
+			
+		<% } -%>
+	</div>
+</div>
+<% } else { -%>
+
+<% } -%>

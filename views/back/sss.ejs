@@ -1,0 +1,57 @@
+<% layout("layout") %>
+
+<div class="row">
+	<section class="panel col-md-12">
+		<header class="panel-heading">
+			<div class="panel-actions">
+				<a href="#" class="fa fa-caret-down"></a>
+			</div>
+							
+			<h2 class="panel-title">SSS Ekle</h2>
+		</header>
+		<div class="panel-body">
+			<form method="post" action="/admin/sssekle">
+					<div class="form-group col-md-12">
+						<label class="control-label">Soru : </label>
+						<input class="form-control" type="text" name="soru">
+					</div>
+					<div class="form-group col-md-12">
+						<label class="control-label">Cevap :</label>
+						<textarea class="form-control" name="cevap" rows="5"></textarea>
+					</div>
+
+					<div class="col-md-12">
+						<button type="submit" class="btn btn-primary pull-right" formaction="/admin/sssekle">Ekle</button>
+					</div>
+			</form>
+		</div>
+	</section>
+	<section class="panel col-md-12">
+		<header class="panel-heading">
+			<div class="panel-actions">
+				<a href="#" class="fa fa-caret-down"></a>
+			</div>
+			<h2 class="panel-title">SSS</h2>
+		</header>
+		<div class="panel-body">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Soru</th>
+						<th>Cevap</th>
+						<th class="text-right">Eylem</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% sss.forEach( function(data) { %>
+						<tr>
+							<td><a href="/admin/sssguncelle/<%= data._id %>"><%= data.soru %></a></td>
+							<td><%= data.cevap %></td>
+							<td><a class="btn btn-danger pull-right" href="/admin/ssssil/<%= data._id %>">SİL</a></td>
+						</tr>
+					<% }) %>
+				</tbody>
+			</table>
+		</div>
+	</section>
+</div>

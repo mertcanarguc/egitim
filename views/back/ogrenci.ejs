@@ -1,0 +1,133 @@
+<% layout("layout") %>
+
+<div class="row">
+	<section class="panel col-md-12">
+		<header class="panel-heading">
+			<div class="panel-actions">
+				<a href="#" class="fa fa-caret-down"></a>
+			</div>
+							
+			<h2 class="panel-title">Öğrenci Ekle</h2>
+		</header>
+		<div class="panel-body">
+			<form method="post" action="/users/uyekaydet">
+					<input type="hidden" name="tip" value="1">
+					<div class="form-group col-md-3">
+						<label class="control-label">Öğrenci Adı : </label>
+						<input class="form-control" type="text" name="ad"  placeholder="Öğrenci Adı">
+					</div>
+					<div class="form-group col-md-3">
+						<label class="control-label">Öğrenci Soyadı :</label>
+						<input type="text" class="form-control" name="soyad" placeholder="Öğrenci Soyadı">
+					</div>
+					<div class="form-group col-md-3">
+						<label class="control-label">Öğrenci TC :</label>
+						<input type="text" name="tc" class="form-control" placeholder="TC Kimlik No">
+					</div>
+					<div class="form-group col-md-3">
+						<label class="control-label">Okulu :</label>
+						<input type="text" class="form-control" name="okul" placeholder="Okul">
+					</div>
+					<div class="form-group col-md-3">
+						<label class="control-label">Yaş : </label>
+						<input type="number" name="yas" class="form-control" placeholder="Yaş">
+					</div>
+					<div class="form-group col-md-3">
+						<label class="control-label">Cinsiyet :</label>
+						<select class="form-control" name="cinsiyet">
+							<option value="Erkek">Erkek</option>
+							<option value="Kadın">Kadın</option>
+						</select>
+					</div>
+					<div class="form-group col-md-3">
+						<label class="control-label">Şehir :</label>
+						<input type="text" name="sehir" class="form-control" placeholder="Şehir">
+					</div>
+					<div class="form-group col-md-3">
+						<label class="control-label">İlçe :</label>
+						<input type="text" name="ilce" class="form-control" placeholder="İlçe">
+					</div>
+					<div class="col-md-6">
+						<label class="control-label">Adres : </label>
+						<input type="text" name="adres" class="form-control" placeholder="Adres">
+					</div>
+					<div class="col-md-3">
+						<label class="control-label">Mail Adresi : </label>
+						<input type="mail" name="username" class="form-control" placeholder="Mail Adresi">
+					</div>
+					<div class="col-md-3">
+						<label class="control-label">Şifre : </label>
+						<input type="password" name="password" class="form-control" placeholder="Şifre">
+					</div>
+					
+					<div class="col-md-12">
+						<button type="submit" formaction="/users/uyekaydet" class="btn btn-primary pull-right">Ekle</button>
+					</div>
+			</form>
+		</div>
+	</section>
+	<section class="panel col-md-12">
+		<header class="panel-heading">
+			<div class="panel-actions">
+				<a href="#" class="fa fa-caret-down"></a>
+			</div>
+			<h2 class="panel-title">Öğrenciler</h2>
+		</header>
+		<div class="panel-body">
+			<table class="table" id="datatable-default">
+				<thead>
+					<tr>
+						<th>Ad - Soyad</th>
+						<th>Mail</th>
+						<th>Şifre</th>
+						<th>Telefon</th>
+						<th>TC</th>
+						<th>Okul</th>
+						<th>Yaş</th>
+						<th>İl - İlçe</th>
+						<th>Adres</th>
+						<th class="text-right">Eylem</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% ogrenci.forEach( function(data) { %>
+						<tr>
+							<td><a href="/admin/ogrenciadmin/<%= data._id %>"><%= data.ad %> <%= data.soyad %></a></td>
+							<td><%= data.username %></td>
+							<td><% if (data.password) { -%>
+								<%= data.password %>
+							<% } else { -%>
+								
+							<% } -%></td>
+							<td><%= data.tel %></td>
+							<td><%= data.tc %></td>
+							<td><%= data.okul %></td>
+							<td><%= data.yas %></td>
+							<td><%= data.sehir %> - <%= data.ilce %></td>
+							<td><%= data.adres %></td>
+							<td><a class="btn btn-sm btn-danger" data-toggle="modal" data-target="#myModal<%= data._id %>">SİL</a></td>
+							<div class="modal fade" id="myModal<%= data._id %>" role="dialog">
+						    <div class="modal-dialog">
+						    
+						      <!-- Modal content-->
+						      <div class="modal-content">
+						        <div class="modal-body">
+						          <h3 class="text-center text-danger">'<%= data.ad %> <%= data.soyad %>' öğrencisini silmek istediğinize emin misiniz ?</h3>
+						          <div class="col-md-12">
+						          	<a class="btn btn-danger btn-sm" style="width: 100%" href="/admin/ogrencisil/<%= data._id %>">SİL</a>
+						          </div>
+						        </div>
+						        <div class="modal-footer">
+						          <button type="button" class="btn btn-sm btn-success" data-dismiss="modal">Vazgeç</button>
+						        </div>
+						      </div>
+						    </div>
+						  </div>
+						</tr>
+						
+					<% }) %>
+				</tbody>
+			</table>
+		</div>
+	</section>
+</div>

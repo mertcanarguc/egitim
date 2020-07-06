@@ -1,0 +1,33 @@
+<% layout("layout") %>
+
+<main>
+		<section id="hero_in" class="courses">
+			<div class="wrapper">
+				<div class="container">
+					<h1 class="fadeInUp"><span></span>Sık Sorulan Sorular</h1>
+				</div>
+			</div>
+		</section>	
+		<div class="row">
+			<div class="col-md-3"></div>
+		<div class="col-md-6" id="faq">
+			<div role="tablist" class="add_bottom_45 accordion_2" id="payment">
+				<% sss.forEach( function(data) { %>
+					<div class="card">
+					<div class="card-header" role="tab">
+						<h5 class="mb-0">
+							<a data-toggle="collapse" href="#<%= data._id %>" aria-expanded="true"><i class="indicator ti-minus"></i><%= data.soru %></a>
+						</h5>
+					</div>
+
+					<div id="<%= data._id %>" class="collapse" role="tabpanel" data-parent="#payment">
+						<div class="card-body">
+							<p><%= data.cevap %></p>
+						</div>
+					</div>
+				</div>
+				<% }) %>
+			</div>
+		</div>
+		</div>
+	</main>

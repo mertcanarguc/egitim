@@ -1,0 +1,147 @@
+<% layout("layout") %>
+
+ <link href="https://vjs.zencdn.net/7.5.5/video-js.css" rel="stylesheet">
+
+
+
+<% if (egitim) { -%>
+		<main>
+		<section id="hero_in" class="courses">
+			<div class="wrapper">
+				<div class="container">
+					<h1 class="fadeInUp"><span></span><%= egitim.ad %></h1>
+				</div>
+			</div>
+		</section>
+		<!--/hero_in-->
+
+		<div class="bg_color_1">
+			<nav class="secondary_nav sticky_horizontal">
+				<div class="container">
+					<ul class="clearfix">
+						<li><a href="#description" class="active">Açıklama</a></li>
+						<li><a href="#lessons">Kurs İçeriği</a></li>
+					</ul>
+				</div>
+			</nav>
+			<div class="container margin_60_35">
+				<div class="row">
+					<div class="col-lg-8">
+
+						<section id="description">
+							<h2>Açıklama</h2>
+							<p><%= egitim.aciklama %></p>
+						</section>
+						<!-- /section -->
+
+						<section id="lessons">
+							<div class="intro_title">
+								<h2>Ders Videoları</h2>
+								<ul>
+									<li><%= egitim.kacv %> Ders</li>
+									<li><% if (egitim.saat) { -%>
+										<%= egitim.saat %>
+									<% } else { -%>
+										
+									<% } -%></li>
+								</ul>
+							</div>
+							<div id="accordion_lessons" role="tablist" class="add_bottom_45">
+								<!-- /card -->
+								<div class="card">
+									<div class="card-header" role="tab" id="headingThree">
+										<h5 class="mb-0">
+											<a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+												<i class="indicator ti-plus"></i>Videolar
+											</a>
+										</h5>
+									</div>
+									<div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion_lessons">
+										<div class="card-body">
+											<div class="list_lessons">
+												<% if (user) { -%>
+													<ul>
+                          							<li><a href="#" class="video">ÖRNEK DERS</a><span>00:59</span></li>
+                          							<% videos.forEach( function(data) { %>
+                          								<li><a href="https://drive.google.com/file/d/11rryipxnmrTvsIunvSrJT-9Ah_0cRMdF/preview" class="video">Health Science</a><span>00:59</span></li>
+                          							<% }) %>
+													<!--<li><a href="https://drive.google.com/file/d/11rryipxnmrTvsIunvSrJT-9Ah_0cRMdF/preview" class="video">Health Science</a><span>00:59</span></li>-->
+												</ul>
+												<% } else { -%>
+													<a href="/users/login">LÜTFEN GİRİŞ YAPINIZ</a>
+												<% } -%>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- /card -->
+							</div>
+							<% if (user) { -%>
+							<br>
+							
+						</section>
+
+						<h2>Duyurular</h2>
+							<table class="table">
+								<thead>
+									<tr>
+										<th>Duyuru Metni</th>
+										<th>Link</th>
+									</tr>
+								</thead>
+								<tbody>
+									<% duyuru.forEach( function(duyuru) { %>
+									<tr>
+										<td><%= duyuru.duyuru %></td>
+										<td><a href="//<%= duyuru.link %>"><%= duyuru.link %></a></td>
+									</tr>
+									<% }) %>
+								</tbody>
+							</table>
+
+
+							<% } else { -%>
+
+							<% } -%>
+							<!-- /accordion -->
+						<!-- /section -->
+
+					</div>
+					<!-- /col -->
+
+					<aside class="col-lg-4" id="sidebar">
+						<div class="box_detail">
+							<figure>
+								<img src="../../upload/egitim/<%= egitim.foto %>" alt="" class="img-fluid"><span><%= egitim.ad %></span></a>
+							</figure>
+							<div class="price">
+								<%= egitim.tutar %> ₺<!--<span class="original_price"><em>$49</em>60% discount price</span>-->
+							</div>
+							<a href="/satis/<%= egitim._id %>" class="btn_1 full-width">Satın Al</a>
+							<a href="/onbasvuruyap/<%= egitim._id %>"><p class="text-center">Ön Başvuru Yap</p></a>
+
+							<div id="list_feat">
+								<!--
+								<h3>What's includes</h3>
+								<ul>
+									<li><i class="icon_mobile"></i>Mobile support</li>
+									<li><i class="icon_archive_alt"></i>Lesson archive</li>
+									<li><i class="icon_mobile"></i>Mobile support</li>
+									<li><i class="icon_chat_alt"></i>Tutor chat</li>
+									<li><i class="icon_document_alt"></i>Course certificate</li>
+								</ul>
+								-->
+							</div>
+						</div>
+					</aside>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /bg_color_1 -->
+	</main>
+
+<% } else { -%>
+
+<% } -%>
